@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.scinter.www.dao.OfferArtifactMapper" >
+  <resultMap id="BaseResultMap" type="com.scinter.www.model.OfferArtifact" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="bed_room" property="bedRoom" jdbcType="INTEGER" />
+    <result column="living_room" property="livingRoom" jdbcType="INTEGER" />
+    <result column="toilet" property="toilet" jdbcType="INTEGER" />
+    <result column="acreage" property="acreage" jdbcType="INTEGER" />
+    <result column="location" property="location" jdbcType="VARCHAR" />
+    <result column="style" property="style" jdbcType="VARCHAR" />
+    <result column="product" property="product" jdbcType="VARCHAR" />
+    <result column="price" property="price" jdbcType="REAL" />
+    <result column="status" property="status" jdbcType="BIT" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, bed_room, living_room, toilet, acreage, location, style, product, price, status
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.scinter.www.model.OfferArtifactExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'false' as QUERYID,
+    <include refid="Base_Column_List" />
+    from offer_artifact
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+    <if test="page != null" >
+      limit #{page.begin} , #{page.length}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from offer_artifact
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from offer_artifact
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.scinter.www.model.OfferArtifact" >
+    insert into offer_artifact (id, bed_room, living_room, 
+      toilet, acreage, location, 
+      style, product, price, 
+      status)
+    values (#{id,jdbcType=INTEGER}, #{bedRoom,jdbcType=INTEGER}, #{livingRoom,jdbcType=INTEGER}, 
+      #{toilet,jdbcType=INTEGER}, #{acreage,jdbcType=INTEGER}, #{location,jdbcType=VARCHAR}, 
+      #{style,jdbcType=VARCHAR}, #{product,jdbcType=VARCHAR}, #{price,jdbcType=REAL}, 
+      #{status,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.scinter.www.model.OfferArtifact" >
+    insert into offer_artifact
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="bedRoom != null" >
+        bed_room,
+      </if>
+      <if test="livingRoom != null" >
+        living_room,
+      </if>
+      <if test="toilet != null" >
+        toilet,
+      </if>
+      <if test="acreage != null" >
+        acreage,
+      </if>
+      <if test="location != null" >
+        location,
+      </if>
+      <if test="style != null" >
+        style,
+      </if>
+      <if test="product != null" >
+        product,
+      </if>
+      <if test="price != null" >
+        price,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="bedRoom != null" >
+        #{bedRoom,jdbcType=INTEGER},
+      </if>
+      <if test="livingRoom != null" >
+        #{livingRoom,jdbcType=INTEGER},
+      </if>
+      <if test="toilet != null" >
+        #{toilet,jdbcType=INTEGER},
+      </if>
+      <if test="acreage != null" >
+        #{acreage,jdbcType=INTEGER},
+      </if>
+      <if test="location != null" >
+        #{location,jdbcType=VARCHAR},
+      </if>
+      <if test="style != null" >
+        #{style,jdbcType=VARCHAR},
+      </if>
+      <if test="product != null" >
+        #{product,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null" >
+        #{price,jdbcType=REAL},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.scinter.www.model.OfferArtifactExample" resultType="java.lang.Integer" >
+    select count(*) from offer_artifact
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.scinter.www.model.OfferArtifact" >
+    update offer_artifact
+    <set >
+      <if test="bedRoom != null" >
+        bed_room = #{bedRoom,jdbcType=INTEGER},
+      </if>
+      <if test="livingRoom != null" >
+        living_room = #{livingRoom,jdbcType=INTEGER},
+      </if>
+      <if test="toilet != null" >
+        toilet = #{toilet,jdbcType=INTEGER},
+      </if>
+      <if test="acreage != null" >
+        acreage = #{acreage,jdbcType=INTEGER},
+      </if>
+      <if test="location != null" >
+        location = #{location,jdbcType=VARCHAR},
+      </if>
+      <if test="style != null" >
+        style = #{style,jdbcType=VARCHAR},
+      </if>
+      <if test="product != null" >
+        product = #{product,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null" >
+        price = #{price,jdbcType=REAL},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=BIT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.scinter.www.model.OfferArtifact" >
+    update offer_artifact
+    set bed_room = #{bedRoom,jdbcType=INTEGER},
+      living_room = #{livingRoom,jdbcType=INTEGER},
+      toilet = #{toilet,jdbcType=INTEGER},
+      acreage = #{acreage,jdbcType=INTEGER},
+      location = #{location,jdbcType=VARCHAR},
+      style = #{style,jdbcType=VARCHAR},
+      product = #{product,jdbcType=VARCHAR},
+      price = #{price,jdbcType=REAL},
+      status = #{status,jdbcType=BIT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

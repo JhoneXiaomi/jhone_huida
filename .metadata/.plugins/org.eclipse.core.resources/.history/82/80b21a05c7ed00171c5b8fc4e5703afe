@@ -1,0 +1,11 @@
+package com.scinter.www.controller;
+
+
+/**
+ * 
+ * 在建工地
+ * 
+ * */
+public class ConstructionSiteController {
+
+}

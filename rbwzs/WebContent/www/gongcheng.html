@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link type="text/css" rel="stylesheet" href="css/style.css"/>
+<script type="text/javascript" src="js/jquery-1.8.2.min"></script>
+<script type="text/javascript">
+			   $(function () {
+			    //点击切换 - tab
+                var roomN = $('.choose .chooseRoom a');
+                var sliderLi = $('.slider .hd li');
+                roomN.each(function (i, ele) {
+                   $(ele).on('click', function () {
+                       $('.slider .hd li').eq(i).click();
+                   })
+                })
+			   //轮播
+               jQuery(".slider").slide({ titCell: ".hd ul", mainCell: ".bd ul", effect: "leftLoop", autoPlay: false, vis: 1, autoPage: true, trigger: "click" });
+			   //点击切换
+			   $('.pnBtn').click(function(){
+				 $('.hd li[class="on"]').click();
+				})
+			   $('.hd li').click(function(){
+				    if($(this).html()==1){
+						 $('.chooseRoom a').removeClass('active');
+        				 $(".a1").addClass('active');
+        				 $('.li01').show();
+        				 $('.li01').siblings('.list').hide();
+					}
+					if($(this).html()==2){
+						$('.chooseRoom a').removeClass('active');
+        				$(".a2").addClass('active');
+        				$('.li02').show();
+        				$('.li02').siblings('.list').hide();
+					}
+					if($(this).html()==3){
+						$('.chooseRoom a').removeClass('active');
+        				$(".a3").addClass('active');
+        				$('.li03').show();
+        				$('.li03').siblings('.list').hide();
+					}
+					if($(this).html()==4){
+						$('.chooseRoom a').removeClass('active');
+        				$(".a4").addClass('active');
+        				$('.li04').show();
+        				$('.li04').siblings('.list').hide();
+					}  
+					if($(this).html()==5){
+						$('.chooseRoom a').removeClass('active');
+        				$(".a5").addClass('active');
+        				$('.li05').show();
+        				$('.li05').siblings('.list').hide();
+					}
+					if($(this).html()==6){
+						$('.chooseRoom a').removeClass('active');
+        				$(".a6").addClass('active');
+        				$('.li06').show();
+        				$('.li06').siblings('.list').hide();
+					}  
+					if($(this).html()==7){
+						$('.chooseRoom a').removeClass('active');
+        				$(".a7").addClass('active');
+        				$('.li07').show();
+        				$('.li07').siblings('.list').hide();
+					}  
+					if($(this).html()==8){
+						$('.chooseRoom a').removeClass('active');
+        				$(".a8").addClass('active');
+        				$('.li08').show();
+        				$('.li08').siblings('.list').hide();
+					}  
+					if($(this).html()==9){
+						$('.chooseRoom a').removeClass('active');
+        				$(".a9").addClass('active');
+        				$('.li09').show();
+        				$('.li09').siblings('.list').hide();
+					}         
+				})
+				
+               //点击左右，触发切换
+			   
+           })
+ </script> 
+
+
+
+</head>
+
+<body>
+<!--header start-->
+<div class="header">
+  <div class="top_one">
+    <div class="w1200 clearfix">
+      <div class="welcom_left fl">欢迎来到瑞博文官方网站！  您的当前站：石家庄</div>
+      <div class="zxyy_right fr">
+        <a href="">在线咨询</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="">在线预约</a>
+      </div>
+    </div>
+  </div>
+  
+  <!--logo telqq start-->
+  <div class="top_t w1200 clearfix">
+    <div class="logo fl"><img src="images/logo.jpg" width="454" height="85"/></div>
+    <div class="telqq fr">
+      <p href="">24小时服务热线：<br/><b>0311-68093796</b></p>
+      <!--<p href="">QQ：<br/>68093796</p>-->
+      <div class="linezx"><a href="">在线咨询</a></div>
+    </div>
+  </div>
+  <!--logo telqq end-->
+
+  <div class="clear"></div>
+</div>
+<!--header end-->
+  
+  <!--nav start-->
+
+
+<div class="nav" id="nav">
+  <ul class="nav1">
+    <li> <a href="index.html" target="_self"><img src="images/icon0.png" />网站首页</a> </li>
+    <li> <a href="about.html"><img src="images/icon1.png" />整装套餐</a>
+      <ul class="nav2">
+        <li><a href="">公司简介</a></li>
+        <li><a href="">公司荣誉</a></li>
+        <li><a href="">企业文化</a></li>
+        <li><a href="">发展历程</a></li>
+      </ul>
+    </li>
+    <li> <a href="products.html"><img src="images/icon6.png" />设计案例</a>
+      <ul class="nav2">
+        <li><a href="">楼盘信息</a></li>
+        <li><a href="">产品展示二</a></li>
+        <li><a href="">产品展示三</a></li>
+        <li><a href="">产品展示四</a></li>
+      </ul>
+    </li>
+    <li><a href="news.html"><img src="images/icon17.png"/>热门活动</a>
+      <ul class="nav2">
+        <li><a href="">热装楼盘</a></li>
+        <li><a href="">装修活动</a></li>
+      </ul>
+    </li>
+    <li> <a href=""><img src="images/icon11.png"/>设计团队</a>
+      <ul class="nav2">
+        <li><a href="">危化物流</a></li>
+        <li><a href="">速递物流</a></li>
+        <li><a href="">零担速运</a></li>
+        <li><a href="">冷链物流</a></li>
+        <li><a href="">砂石运输</a></li>
+      </ul>
+    </li>
+    
+    <li><a href=""><img src="images/icon22.png" />说装修</a>
+      <ul class="nav2">
+        <li><a href="">行业资讯</a></li>
+        <li><a href="">装修攻略</a></li>
+        <li><a href="">家装日记</a></li>
+        <li><a href="">汽车出口</a></li>
+        <li><a href="">二手车业务</a></li>
+      </ul>
+    </li>
+    <li><a href=""><img src="images/icon28.png" />蓝钻工艺</a>
+      <ul class="nav2">
+      </ul>
+    </li>
+    <li><a href=""><img src="images/icon29.png" />瑞博文服务</a>
+      <ul class="nav2">
+        <li><a href="">觉见问题</a></li>
+        <li><a href="">在线订单</a></li>
+      </ul>
+    </li>
+    <li><a href=""><img src="images/icon28.png" />关于瑞博文</a>
+  </ul>
+</div>
+  <!--nav end-->
+
+
+
+
+
+
+
+
+
+<!--二级页面  主体部分 start-->
+
+<div class="ej_main">
+ 
+<!--  <div class="ej_weizhi">
+     <div class="w1200 clearfix">
+       <div class="ej_weizhi_left fl"><span>E</span>STATE &nbsp;热装楼盘</div>
+       <div class="ej_local_right fr">您的当前位置：<a href="">首页</a>&nbsp;>>&nbsp;<a href="">热装楼盘</a></div>
+     </div> 
+  </div>-->
+  
+
+  <div class="gongc w1200">
+    <img src="images/zj01.jpg" width="1200"/>
+    <img src="images/zj02.jpg" width="1200"/>
+    <img src="images/zj03.jpg" width="1200"/>
+    <img src="images/zj04.jpg" width="1200"/>
+    <img src="images/zj05.jpg" width="1200"/>
+    <img src="images/zj06.jpg" width="1200"/>
+    <img src="images/zj07.jpg" width="1200"/>
+    <img src="images/zj08.jpg" width="1200"/>
+    <img src="images/zj09.jpg" width="1200"/>
+    <img src="images/zj010.jpg" width="1200"/>
+    <img src="images/zj011.jpg" width="1200"/>
+    <img src="images/zj012.jpg" width="1200"/>
+    <img src="images/zj013.jpg" width="1200"/>
+    <img src="images/zj014.jpg" width="1200"/>
+  </div>
+  
+  
+</div>
+
+
+<!--二级页面  主体部分 end-->
+
+
+
+
+
+
+
+
+<!--footer start-->
+<div class="footer">
+  <div class="foot w1200">
+     <div class="link">
+       友情链接：<a href=""> 重庆装修公司 </a><a href="">防火隔离带</a><a href=""> 六安房产网 </a><a href=""> 亚麻地板</a>
+     </div>
+     
+     <div class="foot01 clearfix">
+       <div class="footer_nav fl">
+         <h5>快速导航</h5>
+         <a href="">装修套餐</a>
+         <a href="">设计案例</a>
+         <a href="">热门活动</a>
+         <a href="">设计团队</a>
+         <a href="">装修攻略</a>
+         <a href="">蓝钻工艺</a>
+         <a href="">三创服务</a>
+         <a href="">关于三创</a>
+       </div>
+       
+       <div class="footer_add fl">
+         <ul class="clearfix">
+           <li><img src="images/icon_phone.png"/><span>热线：18332069625</span></li>
+           <li><img src="images/icon_tel.png"/>电话：0311-68093796</li>
+           <li><img src="images/icon_qq.png"/>QQ：68093796</li>
+           <li><img src="images/icon_add.png"/>地址：河北省石家庄市桥东区建设北大街228号东海国际3层</li>
+         </ul>
+       </div>
+       
+       <div class="footer_ewm fr">
+         <ul class="clearfix">
+           <li><img src="images/erCode.png" width="96" height="96"/><p>官方微信</p></li>
+           <li><img src="images/weibo.png" width="96" height="96"/><p>官方微博</p></li>
+         </ul>
+       </div>
+     </div>
+  </div>
+  
+    <div class="foot_bot">
+       <div class="w1200">瑞博文装饰有限公司  备ICP  版权所有 Copyright© 2014 All Rights Reserved 技术支持：瑞博文装饰</div>
+     </div>
+  
+</div>
+<!--footer end-->
+	${sessionScope.statistics.value }
+${sessionScope.shangqiao.value }
+</body>
+</html>

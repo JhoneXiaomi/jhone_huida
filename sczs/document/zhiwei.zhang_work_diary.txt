@@ -1,0 +1,97 @@
+==================================================
+#2016-07-28 工作日志
+
+1、添加网站真实测试数据
+2、网站首页三种新闻分类信息展现
+3、等等
+==================================================
+#2016-07-28 工作日志 ...
+
+一 、页面操作
+1.添加网站真是数据的测试
+2.网站首页三种新消息的展示
+3.修改 HomeColler     lines  147 
+	for(int i=0; i<CasesLists.size() || i<5; i++){ 
+				===>>> for(int i=0; i<CasesLists.size() && i<5; i++){ 
+4.修改 	casesDesigner.jsp   Lines 141   
+	  <p><b style="color:#f39800">设计理念：</b>${fn:substring(designer.designerIdea,0,50)}....</p>
+5.修改  house.jsp  Lines 150
+      <div class="loupan_img"><a href="#"><img src="${house.bulidingThumbImg }" width="280" height="213" alt="${house.bulidingName }"></a></div>
+6.修改  house.jsp  Lines 163
+	  <div class="loupan_img"><a href="#"><img src="${house.bulidingThumbImg }" width="280" height="213" alt="${house.bulidingName }"></a></div>
+
+7.修改 home.jsp  Lines 641  lines 654   lines 620  注释掉了 热点楼盘的详情页的连接
+	
+二、数据库操作
+
+1.更改数据表 cases  creater
+ALTER TABLE `nick`.`cases` CHANGE `creater` `creater` VARCHAR(20) CHARSET utf8 COLLATE utf8_general_ci NULL; 
+ 	
+2.更改数据表 cases  updater
+ALTER TABLE `nick`.`cases` CHANGE `updater` `updater` VARCHAR(20) CHARSET utf8 COLLATE utf8_general_ci NULL; 
+
+三、后台代码
+1.修改  news_type.json  
+	活动专题   -》》 热门活动	
+   添加
+   "id":"公司新闻",
+	"text":"公司新闻"
+	},
+	{
+	"id":"行业动态",
+	"text":"行业动态"
+	},
+	{
+	"id":"技术支持",
+	"text":"技术支持" 
+
+2.CaseController  Lines 252 		
+
+com.scinter.www.model.CasesExample.Criteria criteria3 = casesExample3.createCriteria();
+
+
+3.修改 newsSave.jsp           Lines  102
+
+   <input type="hidden" id="thumbImg" name="thumbImg" value="${newsInfo.thumbImg }" />
+   
+4.  项目 sczs caseColltroller   Lines251    lines273
+
+	->>com.scinter.www.model.CasesExample.Criteria criteria3 = casesExample3.createCriteria();
+	
+	
+	->>caseHouseTypeList.add(cases);	
+	
+==================================================
+#2016-07-29 工作日志	
+
+
+1.完成了手机站的首页的配置
+2.完成了手机站首页的效果显示（就剩下新闻轮转）
+3.完成了案例的详情页
+4.完成了设计师的详情页的逻辑编写。
+5.设计师详情页展示完成了一部分。
+
+
+=================================================
+#2016-07-30 工作日志
+
+1、完成了手机站新闻详情页的展示
+
+2、完成了手机站设计师详情页的展示。
+
+3、完成了PC端导航栏的处理。
+
+4、处理了说装修，热门活动的二级导航的跳转。
+
+5、处理了底部的快速导航。
+
+6、修改了PC 首页的新闻轮转。
+
+
+=================================================
+#2016-07-31 工作日志
+
+1.楼盘信息
+
+ 修改顶头的当前位置
+

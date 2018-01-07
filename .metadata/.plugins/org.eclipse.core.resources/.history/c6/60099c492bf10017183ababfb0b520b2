@@ -1,0 +1,170 @@
+package com.scinter.sczs.controller;
+
+import java.util.Date;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.apache.commons.lang.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.scinter.sczs.service.impl.MScActivityServiceImpl;
+import com.scinter.www.controller.BaseController;
+import com.scinter.www.dao.SysLogMapper;
+import com.scinter.www.dao.TbMobileActivityDtoMapper;
+import com.scinter.www.model.Role;
+import com.scinter.www.model.SysLog;
+import com.scinter.www.model.TbMobileActivityDto;
+import com.scinter.www.model.TbMobileActivityDtoExample;
+import com.scinter.www.model.User;
+import com.scinter.www.util.JsonPrintUtil;
+import com.scinter.www.util.Page;
+import com.scinter.www.util.SysLogUtil;
+import com.scinter.www.util.TableName;
+
+@Controller
+@RequestMapping("admin")
+public class MScActivatyController extends BaseController {
+
+	@Autowired
+	private MScActivityServiceImpl mScActivityServiceImpl;
+	@Autowired
+	private SysLogMapper sysLogMapper;
+	@Autowired
+	private TbMobileActivityDtoMapper tbMobileActivityDtoMapper;
+
+	@ResponseBody
+	@RequestMapping("listMScActivatyToJson")
+	// 页面参数：当前页 page 每页显示条数rows
+	public void listMScActivatyToJson(@RequestParam("page") int page, @RequestParam("rows") int rows,
+			HttpSession session, HttpServletResponse response) {
+
+		Role currentRole = (Role) session.getAttribute("Role");
+		String roleName = currentRole.getRoleName();
+		String branchCompany = "";
+		if (!"超级管理员".equals(roleName)) {
+			branchCompany = currentRole.getBranchCompany();
+		}
+
+		// 日志记录
+		SysLog sysLog = new SysLog();
+		sysLog = SysLogUtil.search(session, 0, TableName.news, "三创活动列表信息");
+		sysLogMapper.insert(sysLog);
+
+		JsonPrintUtil.printGridData(response,
+				mScActivityServiceImpl.queryMobileActivities(branchCompany, page, rows, 1),
+				mScActivityServiceImpl.countMobileActivities(branchCompany, 1), "rows", "total");
+	}
+
+	@ResponseBody
+	@RequestMapping("/saveMscActivity")
+	public void saveScActivaty(TbMobileActivityDto tbMobileActivityDto, HttpServletResponse response,
+			HttpServletRequest request, HttpSession session) {
+
+		User currentLoginUser = (User) request.getSession().getAttribute("UserInfo");
+		Role currentRole = (Role) session.getAttribute("Role");
+		
+		String branchCompany = "";
+		if (!"超级管理员".equals(currentRole.getRoleName())) {
+			branchCompany = currentRole.getBranchCompany();
+		} else {
+			branchCompany = "bjsc";
+		}
+		
+		if (StringUtils.isBlank(tbMobileActivityDto.getId())) {
+			tbMobileActivityDto.setCreateTime(new Date());
+			tbMobileActivityDto.setPerson(currentLoginUser.getNickName());
+			tbMobileActivityDto.setCreateId(currentLoginUser.getUserId().toString());
+			tbMobileActivityDto.setCreateTime(new Date());
+			tbMobileActivityDto.setUpdateTime(new Date());
+			tbMobileActivityDto.setStatus(1);
+			mScActivityServiceImpl.addMobileActivity(tbMobileActivityDto);
+			tbMobileActivityDto.setAddress("http://m.sc27800.com/mActicityDetail?newsId="+tbMobileActivityDto.getId());
+			mScActivityServiceImpl.updateMobileActivity(tbMobileActivityDto);
+		} else {
+			tbMobileActivityDto.setStatus(1);
+			tbMobileActivityDto.setUpdateTime(new Date());
+			tbMobileActivityDto.setUpdateId(currentLoginUser.getUserName());
+			tbMobileActivityDto.setCreateTime(mScActivityServiceImpl.queryMobileActivityById(tbMobileActivityDto.getId()).getCreateTime());
+			tbMobileActivityDto.setAddress(mScActivityServiceImpl.queryMobileActivityById(tbMobileActivityDto.getId()).getAddress());
+			
+			mScActivityServiceImpl.updateMobileActivity(tbMobileActivityDto);
+		}
+		JsonPrintUtil.printObjData(response, "ok");
+	}
+
+	@RequestMapping("showMscActivaty")
+	public String showNews(String id, HttpSession session, ModelMap modelMap) {
+
+		/* 初始化SEO案例列表页的信息 */
+		ModelAndView model = new ModelAndView();
+
+		TbMobileActivityDto mobileActivityDto = mScActivityServiceImpl.queryMobileActivityById(id);
+
+		modelMap.addAttribute("mobileActivityDtoInfo", mobileActivityDto);
+
+		return "/admin/sjhdSave";
+	}
+
+	@ResponseBody
+	@RequestMapping("searchMscListActivaty")
+	public void searchListNews(@RequestParam("page") int page, @RequestParam("rows") int rows, String BCompany,
+			String keyWord, HttpSession session, HttpServletRequest request, HttpServletResponse response) {
+		
+		Role currentRole = (Role) session.getAttribute("Role");
+		String branchCompany = currentRole.getBranchCompany();
+		
+		TbMobileActivityDtoExample ux = new TbMobileActivityDtoExample();
+		com.scinter.www.model.TbMobileActivityDtoExample.Criteria criteria = ux.createCriteria();
+		
+		if (StringUtils.isNotBlank(keyWord) && StringUtils.isNotBlank(BCompany)) {
+			keyWord = "%" + keyWord + "%";
+			ux.or().andTitleLike(keyWord).andStatusEqualTo(1).andBranchCompanyEqualTo(BCompany);
+		} else if (StringUtils.isNotBlank(keyWord) && StringUtils.isBlank(BCompany)) {
+			keyWord = "%" + keyWord + "%";
+			ux.or().andTitleLike(keyWord).andStatusEqualTo(1);
+		} else if (StringUtils.isBlank(keyWord) && StringUtils.isNotBlank(BCompany)) {
+			criteria.andStatusEqualTo(1).andBranchCompanyEqualTo(BCompany);
+		} else {
+			String roleName = currentRole.getRoleName();
+			if (!"超级管理员".equals(roleName)) {
+				criteria.andStatusEqualTo(1);
+				criteria.andBranchCompanyEqualTo(branchCompany);// 当前用户所属分公司
+			} else {
+
+				criteria.andStatusEqualTo(1);
+			}
+		}
+
+		int totalNums = (int) tbMobileActivityDtoMapper.countByExample(ux);
+		Page p = new Page((page - 1) * rows, rows);
+		p.setTotalRecords(totalNums);
+		ux.setPage(p);
+		ux.setOrderByClause("create_time desc");//排序
+		List<TbMobileActivityDto> newsList4Page = tbMobileActivityDtoMapper.selectByExample(ux);
+		
+		JsonPrintUtil.printGridData(response,newsList4Page,totalNums, "rows", "total");
+	}
+
+	
+	@ResponseBody
+	@RequestMapping("delMscActivaty")
+	public void delNews(String ids,HttpSession session,HttpServletResponse response) {
+		User currentLoginUser = (User)session.getAttribute("UserInfo");
+		if(!StringUtils.isBlank(ids)){
+			
+			mScActivityServiceImpl.updateMobileActivityByIds(ids, currentLoginUser.getUserId().toString());
+			JsonPrintUtil.printObjData(response, "ok");
+		}else{
+			JsonPrintUtil.printObjData(response, "fail");
+		}
+	}
+}

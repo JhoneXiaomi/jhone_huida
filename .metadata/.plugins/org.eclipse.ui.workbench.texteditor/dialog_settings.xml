@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item value="452" key="DIALOG_X_ORIGIN"/>
+		<item value="254" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="bulidingThumbImg" key="selection"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="bulidingThumbImg"/>
+			<item value="saveHotBuildingSite"/>
+			<item value="grid_hotBuildingSite"/>
+			<item value="filePicker1"/>
+			<item value="hotBuildingSiteInfo"/>
+			<item value="siteId"/>
+			<item value="mFooter"/>
+			<item value="foot-navlb"/>
+			<item value="foot4"/>
+			<item value="foot3"/>
+			<item value="foot2"/>
+			<item value="foot1"/>
+			<item value="#db6327"/>
+			<item value="db6327"/>
+			<item value="buildingList"/>
+		</list>
+		<list key="replacehistory">
+			<item value="4"/>
+			<item value="3"/>
+			<item value="2"/>
+			<item value="1"/>
+			<item value="#009c42"/>
+			<item value="gif"/>
+			<item value="469"/>
+			<item value="xz32800"/>
+			<item value="北京瑞博文易家装饰工程有限公司"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="300" key="DIALOG_WIDTH"/>
+		<item value="1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI" key="DIALOG_FONT_NAME"/>
+		<item value="410" key="DIALOG_HEIGHT"/>
+		<item value="791" key="DIALOG_X_ORIGIN"/>
+		<item value="336" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

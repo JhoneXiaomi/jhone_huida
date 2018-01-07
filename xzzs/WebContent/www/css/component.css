@@ -1,0 +1,79 @@
+/* General styles for the modal */
+
+/* 
+Styles for the html/body for special modal where we want 3d effects
+Note that we need a container wrapping all content on the page for the 
+perspective effects (not including the modals and the overlay).
+*/
+
+.mainbj{-webkit-filter: blur(3px);
+}
+.md-perspective,.md-perspective body {height: 100%;	overflow: hidden;}
+.md-perspective body  {	background: #222;	-webkit-perspective: 600px;	-moz-perspective: 600px;perspective: 600px;}
+.container {background: #e74c3c;min-height: 100%;}
+.md-modal {	position: fixed;top: 50%;left: 50%;/* width: 50%; */	max-width: 630px;min-width: 320px;height: auto;z-index: 2000;visibility: hidden;	-webkit-backface-visibility: hidden;-moz-backface-visibility: hidden;backface-visibility: hidden;-webkit-transform: translateX(-50%) translateY(-50%);-moz-transform: translateX(-50%) translateY(-50%);-ms-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);}
+.md-show {visibility: visible;}
+.md-overlay {position: fixed;width: 100%;height: 100%;visibility: hidden;top: 0;left: 0;z-index: 1000;opacity: 0;background: rgba(143,27,15,0.8);-webkit-transition: all 0.3s;-moz-transition: all 0.3s;	transition: all 0.3s;}
+.md-overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	visibility: hidden;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	opacity: 0;
+	background: rgba(143,27,15,0.8);
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+}
+.md-show ~ .md-overlay {opacity: 1;	visibility: visible;}
+/* Content styles */
+.md-content {color: #fff;background: #e74c3c;position: relative;border-radius: 3px;margin: 0 auto;}
+.md-content h3 {margin: 0;	padding: 0.4em;text-align: center;font-size: 2.4em;font-weight: 300;opacity: 0.8;background: rgba(0,0,0,0.1);border-radius: 3px 3px 0 0;}
+.md-content > div {padding: 15px 40px 30px;margin: 0;font-weight: 300;font-size: 1.15em;}
+.md-content > div p {margin: 0;padding: 10px 0;}
+.md-content > div ul {margin: 0;padding: 0 0 30px 20px;}
+.md-content > div ul li {padding: 5px 0;}
+.md-content button {display: block;margin: 0 auto;font-size: 0.8em;margin-top: 10px;
+    width: 30px;overflow: visible;
+    padding: 0;
+    background-color: transparent;
+    color: #fff;
+    border: 0;}
+  
+    .inpsjs_name,.inpsjs_tel,.inpsjs_lp,.inpsjs_mj{ height:28px;line-height:28px;}
+    .md-content select{ height:28px;line-height:28px;border:none; color:#666; margin-left:5px;}
+/* Individual modal styles with animations/transitions */
+/* Effect 1: Fade in and scale up */
+.md-effect-1 .md-content {-webkit-transform: scale(0.7);-moz-transform: scale(0.7);-ms-transform: scale(0.7);transform: scale(0.7);	opacity: 0;	-webkit-transition: all 0.3s;-moz-transition: all 0.3s;	transition: all 0.3s;}
+.md-show.md-effect-1 .md-content {-webkit-transform: scale(1);-moz-transform: scale(1);-ms-transform: scale(1);	transform: scale(1);
+	opacity: 1;}
+.sjs_list_yuyue button{overflow:visible;padding:0;background-color:transparent;color:#fff;border:0}
+/* Effect 2: Slide from the right */
+
+
+.md-close{background:url(../images/dialog_close.png) no-repeat;height:25px;line-height:25px;position: absolute;     top: 2px;
+    left: 280px;}
+      
+@-webkit-keyframes OpenTop {50% { -webkit-transform: rotateX(10deg);-webkit-animation-timing-function: ease-out; }}
+
+@-moz-keyframes OpenTop {50% { -moz-transform: rotateX(10deg); -moz-animation-timing-function: ease-out; }}
+
+@keyframes OpenTop {50% { transform: rotateX(10deg); animation-timing-function: ease-out; }}
+
+@media screen and (max-width: 32em) {body { font-size: 75%; }}
+
+
+.submit_btn{color: #f00;    margin-top: 8px;
+    background: #fff;
+    line-height: 30px;
+    text-align: center;
+    margin-left: 58px;
+    width: 80px;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 0 25px 0 25px;
+    display: inline-block; border-radius:2px;
+    /*border: 1px solid #7dc62a; */}

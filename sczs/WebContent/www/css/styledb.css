@@ -1,0 +1,44 @@
+@charset "utf-8";
+/* CSS Document */
+/*
+*{padding:0; margin:0;}
+body{font-family:"微软雅黑","Arial";}
+ul,li{list-style:none;}
+img{border:0;}
+em,i{font-style:normal;}
+a,a:hover{text-decoration:none;}
+.fl{float:left;}
+.fr{float:right;}
+.clear{clear:both;}
+.clearfix{zoom:1;}
+.clearfix:after{content:"."; display:block; clear:both; height:0; font:0/0 sans-serif; visibility:hidden;}
+.wbody{width:1180px; margin:0 auto;}*/
+
+.wbody{ width:1180px;  margin:0 auto; background:#000207;}
+ 
+
+/*右侧悬浮代码*/
+.lanren {RIGHT:15px; POSITION:absolute; TOP:100px; width:84px; height:530px; z-index:999999;}
+.lanren-one{width:82px; height:82px; border:1px solid #e1e0e0; margin-bottom:5px; text-align:center; font-size:12px; padding-top:10px; box-sizing:border-box; line-height:30px; color:#fff; background:#fff;}
+.lanren-one a{display:block; color:#3f3b3a;}
+.elevator{background:#77bd0e; cursor:pointer;}
+
+.Column-100{width:100%; height:auto; margin: 0 auto; min-width:1190px;}
+/*底部报价器*/
+.fBaojia-h{height:85px; background:#3C404B;}
+.fBaojia{/*padding:20px 0;*/ position:fixed !important; left:0; bottom:0 !important;; z-index:9999; height:160px;/* height:45px;*/filter:progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#B2FB4E4F', endColorstr='#B2FB4E4F');/*background:rgba(119,189,14,0.7); */overflow:visible; background:#15161a;opacity: 0.78;}
+.fBaojia .closeBaojia{display:block; position:absolute; right:10px; bottom:50px; width:24px; height:24px; background:#383838; text-align:center; border-radius:3px; color:#FFF; z-index:10000; cursor:pointer; font-size:14px;}
+.fBaojia .closeBaojia:hover{background:#f39800;}
+.fBaojia .info .cur{color:#fff100;}
+.fBaojia .tt p{line-height:28px;}
+.openBaojia{width:30px; height:80px; padding:10px 0; border-radius:0 5px 5px 0; line-height:20px; background:#f39800; position:fixed; bottom:0; left:-30px; z-index:9999; cursor:pointer; color:#fff; text-align:center;}
+.baojia-name{width:225px; color:#fff; font-size:30px; height:180px;/* line-height:22px; */background:url(../images/dbpic.png) no-repeat;}
+
+.xingming{width:152px;}
+.ggtext{height:42px; background:#fff; line-height:42px; border-radius:3px; border:0; font-size:18px; color:#999; padding-left:10px; box-sizing:border-box; margin-right:10px;}
+.dbyzm{width:100px;}
+.yanzm{width:100px; height:42px; margin-right:10px;}
+.wwbj-but{height:42px; background:#d33903; line-height:42px; border-radius:3px; width:110px; color:#fff; text-align:center; border:0; font-size:16px; cursor:pointer;}
+.baojia-con { margin-top:50px; margin-left:30px; }
+.db_ewm img{ margin-top:34px; margin-left:30px;}
+.db_ewm span{ margin-left:26px;}

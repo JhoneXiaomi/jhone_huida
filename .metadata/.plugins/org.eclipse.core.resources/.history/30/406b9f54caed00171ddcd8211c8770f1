@@ -1,0 +1,93 @@
+package com.scinter.www.controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.apache.commons.lang.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.scinter.www.dao.CasesMapper;
+import com.scinter.www.dao.HotBuildingSiteImageMapper;
+import com.scinter.www.dao.HotBuildingSiteMapper;
+import com.scinter.www.model.Cases;
+import com.scinter.www.model.CasesExample;
+import com.scinter.www.model.HotBuildingSite;
+import com.scinter.www.model.HotBuildingSiteImage;
+import com.scinter.www.model.HotBuildingSiteImageExample;
+
+/**
+ * 
+ * 在建工地逻辑处理类
+ * 
+ * */
+public class ConstructionSiteController {
+
+	@Autowired
+	HotBuildingSiteMapper hotBuildingSiteMapper;
+	@Autowired
+	HotBuildingSiteImageMapper hotBuildingSiteImageMapper;
+	@Autowired
+	CasesMapper casesMapper;
+	
+	@RequestMapping("workBuildingDetail")
+	public ModelAndView workBuildingDetail(@RequestParam("siteId")String siteId,HttpSession session, HttpServletResponse response){
+		
+		ModelAndView  model = new ModelAndView();
+		String branchCompany = (String) session.getAttribute("branchCompany");
+		if(StringUtils.isBlank(branchCompany)){
+			branchCompany = "bjxz";
+		}
+		// 获取当前点击的工地的信息
+		HotBuildingSite CurrentSite = hotBuildingSiteMapper.selectByPrimaryKey(Integer.valueOf(siteId));
+		
+		// 获取工地的施工图
+		HotBuildingSiteImageExample he =new HotBuildingSiteImageExample();
+		com.scinter.www.model.HotBuildingSiteImageExample.Criteria hc = he.createCriteria();
+		hc.andSiteIdEqualTo(Integer.valueOf(siteId));
+		hc.andImageUrlNotEqualTo("");
+		hc.andStatusEqualTo(1);
+		hc.andImageTypeNotEqualTo("5");
+		hc.andImageTypeNotEqualTo("6");
+		he.setOrderByClause("create_time desc");
+		List<HotBuildingSiteImage> ShowImageList = hotBuildingSiteImageMapper.selectByExample(he);
+		List<HotBuildingSiteImage> showImages = new ArrayList<HotBuildingSiteImage>();
+		for(HotBuildingSiteImage image:ShowImageList){
+			if(image.getImageUrl() != ""){
+				image.setImageUrl(image.getImageUrl().substring(0,27)+"_logo"+CurrentSite.getSiteThumbImg().substring(27,31));
+			}
+			showImages.add(image);
+		}
+		
+		Integer buildingNum = showImages.size();
+		
+		// 获取工地的效果图
+		HotBuildingSiteImageExample whe =new HotBuildingSiteImageExample();
+		whe.or().andSiteIdEqualTo(Integer.valueOf(siteId)).andStatusEqualTo(1).andImageUrlNotEqualTo("").andImageTypeEqualTo("5");
+		whe.or().andSiteIdEqualTo(Integer.valueOf(siteId)).andStatusEqualTo(1).andImageUrlNotEqualTo("").andImageTypeEqualTo("6");
+		whe.setOrderByClause("create_time desc");
+		List<HotBuildingSiteImage> wShowImageList = hotBuildingSiteImageMapper.selectByExample(whe);
+		List<HotBuildingSiteImage> wshowImages = new ArrayList<HotBuildingSiteImage>();
+		for(HotBuildingSiteImage image:wShowImageList){
+			if(image.getImageUrl() != ""){
+				image.setImageUrl(image.getImageUrl().substring(0,27)+"_logo"+CurrentSite.getSiteThumbImg().substring(27,31));
+			}
+			wshowImages.add(image);
+		}
+		
+		Integer wbuildingNum = wshowImages.size();
+		
+		model.addObject("wshowImages", wshowImages);
+		model.addObject("wbuildingNum", wbuildingNum);
+		model.addObject("buildingNum", buildingNum);
+		model.addObject("CurrentSite", CurrentSite);
+		model.addObject("showImages", showImages);
+		model.setViewName("/www/workBuildingDetail");
+		return model;
+	}
+}

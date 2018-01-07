@@ -1,0 +1,3 @@
+#Tomcat publish data
+#Thu Jan 04 16:39:26 CST 2018
+org.eclipse.jst.jee.server\:/binary\:D\:\\java_workspace\\jhone_huida\\scinter\\WebContent\\WEB-INF\\lib\\spring-web-3.2.13.RELEASE.jar=WEB-INF/lib/spring-web-3.2.13.RELEASE.jar

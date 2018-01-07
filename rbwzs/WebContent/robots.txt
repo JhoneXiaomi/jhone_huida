@@ -1,0 +1,5 @@
+user-agent:*
+Allow:/www/activityDetail.jsp
+Allow:/www/caseDetail.jsp
+Allow:/www/Integrated_package.jsp
+Disallow:/

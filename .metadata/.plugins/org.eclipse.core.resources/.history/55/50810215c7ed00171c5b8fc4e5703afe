@@ -1,0 +1,12 @@
+package com.scinter.www.controller;
+
+
+/**
+ * 
+ * 在建工地逻辑处理类
+ * 
+ * */
+public class ConstructionSiteController {
+
+	
+}

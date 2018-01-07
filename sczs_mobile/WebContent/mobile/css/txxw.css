@@ -1,0 +1,12 @@
+@CHARSET "UTF-8";
+/*三创腾讯新闻 start*/
+.sc_txxw img{ width:100%;}
+.sc_txxw_form select{width: 96%; height: 35px;border: solid 1px #ce1f24;line-height: 35px; margin-bottom: 10px; border-radius: 4px; color: #666;padding-left: 5px; margin-left: 1.8%; font-size:1em; margin-top:10px;}
+.sc_txxw_form input{width: 95%; height: 35px;line-height: 35px; margin-bottom: 10px; border-radius: 4px; border: solid 1px #ce1f24;
+color: #666; text-indent: 10px;margin-left: 1.8%; font-size:1em;}
+.sc_txxw_form .Scbaojia{ background:#ce1f24; font-size:1.2em; color:#fff; letter-spacing:5px;}
+.sc_txxw_form h3{ text-align:center; font-family:"微软雅黑"; color:#df9d3d; letter-spacing:2px;}
+.sc_txxw_form h3 font{ color:#ce1f24;}
+.sc_txxwfoot{margin-top: 3px ;line-height:30px;font-size:0.8em; text-align:center;background:#f2f2f2; margin-bottom:5px; color:}
+.sc_txxw_but{display: block; background:#ce1f24; font-size:1.2em; color:#fff; letter-spacing:5px;    border: 0; width:95%; height:40px; margin-left:1.8%;border-radius:10px; margin-bottom:10px;}
+/*三创腾讯新闻 end*/

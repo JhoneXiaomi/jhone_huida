@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.scinter.www.dao.TicketMapper" >
+  <resultMap id="BaseResultMap" type="com.scinter.www.model.Ticket" >
+    <id column="tid" property="tid" jdbcType="VARCHAR" />
+    <result column="ticket" property="ticket" jdbcType="VARCHAR" />
+    <result column="errcode" property="errcode" jdbcType="VARCHAR" />
+    <result column="errmsg" property="errmsg" jdbcType="VARCHAR" />
+    <result column="expires_in" property="expiresIn" jdbcType="VARCHAR" />
+    <result column="acquiretime" property="acquiretime" jdbcType="VARCHAR" />
+    <result column="noncestr" property="noncestr" jdbcType="VARCHAR" />
+    <result column="timestamp" property="timestamp" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    tid, ticket, errcode, errmsg, expires_in, acquiretime, noncestr, timestamp
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.scinter.www.model.TicketExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'false' as QUERYID,
+    <include refid="Base_Column_List" />
+    from ticket
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+    <if test="page != null" >
+      limit #{page.begin} , #{page.length}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from ticket
+    where tid = #{tid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from ticket
+    where tid = #{tid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.scinter.www.model.Ticket" >
+    insert into ticket (tid, ticket, errcode, 
+      errmsg, expires_in, acquiretime, 
+      noncestr, timestamp)
+    values (#{tid,jdbcType=VARCHAR}, #{ticket,jdbcType=VARCHAR}, #{errcode,jdbcType=VARCHAR}, 
+      #{errmsg,jdbcType=VARCHAR}, #{expiresIn,jdbcType=VARCHAR}, #{acquiretime,jdbcType=VARCHAR}, 
+      #{noncestr,jdbcType=VARCHAR}, #{timestamp,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.scinter.www.model.Ticket" >
+    insert into ticket
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="tid != null" >
+        tid,
+      </if>
+      <if test="ticket != null" >
+        ticket,
+      </if>
+      <if test="errcode != null" >
+        errcode,
+      </if>
+      <if test="errmsg != null" >
+        errmsg,
+      </if>
+      <if test="expiresIn != null" >
+        expires_in,
+      </if>
+      <if test="acquiretime != null" >
+        acquiretime,
+      </if>
+      <if test="noncestr != null" >
+        noncestr,
+      </if>
+      <if test="timestamp != null" >
+        timestamp,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="tid != null" >
+        #{tid,jdbcType=VARCHAR},
+      </if>
+      <if test="ticket != null" >
+        #{ticket,jdbcType=VARCHAR},
+      </if>
+      <if test="errcode != null" >
+        #{errcode,jdbcType=VARCHAR},
+      </if>
+      <if test="errmsg != null" >
+        #{errmsg,jdbcType=VARCHAR},
+      </if>
+      <if test="expiresIn != null" >
+        #{expiresIn,jdbcType=VARCHAR},
+      </if>
+      <if test="acquiretime != null" >
+        #{acquiretime,jdbcType=VARCHAR},
+      </if>
+      <if test="noncestr != null" >
+        #{noncestr,jdbcType=VARCHAR},
+      </if>
+      <if test="timestamp != null" >
+        #{timestamp,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.scinter.www.model.TicketExample" resultType="java.lang.Integer" >
+    select count(*) from ticket
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.scinter.www.model.Ticket" >
+    update ticket
+    <set >
+      <if test="ticket != null" >
+        ticket = #{ticket,jdbcType=VARCHAR},
+      </if>
+      <if test="errcode != null" >
+        errcode = #{errcode,jdbcType=VARCHAR},
+      </if>
+      <if test="errmsg != null" >
+        errmsg = #{errmsg,jdbcType=VARCHAR},
+      </if>
+      <if test="expiresIn != null" >
+        expires_in = #{expiresIn,jdbcType=VARCHAR},
+      </if>
+      <if test="acquiretime != null" >
+        acquiretime = #{acquiretime,jdbcType=VARCHAR},
+      </if>
+      <if test="noncestr != null" >
+        noncestr = #{noncestr,jdbcType=VARCHAR},
+      </if>
+      <if test="timestamp != null" >
+        timestamp = #{timestamp,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where tid = #{tid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.scinter.www.model.Ticket" >
+    update ticket
+    set ticket = #{ticket,jdbcType=VARCHAR},
+      errcode = #{errcode,jdbcType=VARCHAR},
+      errmsg = #{errmsg,jdbcType=VARCHAR},
+      expires_in = #{expiresIn,jdbcType=VARCHAR},
+      acquiretime = #{acquiretime,jdbcType=VARCHAR},
+      noncestr = #{noncestr,jdbcType=VARCHAR},
+      timestamp = #{timestamp,jdbcType=VARCHAR}
+    where tid = #{tid,jdbcType=VARCHAR}
+  </update>
+</mapper>

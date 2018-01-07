@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 6 elements to &apos;sczs/resources&apos;&#x0D;&#x0A;- Original project: &apos;scinter&apos;&#x0D;&#x0A;- Destination element: &apos;sczs/resources&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     autoJavaGeneratorConfig.xml&#x0D;&#x0A;     spring-mybatis.xml&#x0D;&#x0A;     spring.xml&#x0D;&#x0A;     log4j.properties&#x0D;&#x0A;     jdbc.properties&#x0D;&#x0A;     spring-mvc.xml" description="Copy files" destination="=sczs/resources" element1="resources/autoJavaGeneratorConfig.xml" element2="resources/spring-mybatis.xml" element3="resources/spring.xml" element4="resources/log4j.properties" element5="resources/jdbc.properties" element6="resources/spring-mvc.xml" files="6" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1509852358990" units="0" version="1.0"/>
+</session>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;rbwzs_mobile/WebContent/mobile/images/style.css&apos; to &apos;xzstyle.css&apos;" description="Rename resource &apos;style.css&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="WebContent/mobile/images/style.css" name="xzstyle.css" stamp="1514689058607" updateReferences="true"/>
+</session>
