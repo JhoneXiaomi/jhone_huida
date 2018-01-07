@@ -7,6 +7,7 @@
 <!doctype html>
 <html>
 <head>
+	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"  />
 	<meta name="keywords" content="${statScinterhomeSeoKeyword.value }">
 	<meta name="description" content="${statScinterHomeSeoDesc.value }">
@@ -52,8 +53,9 @@
 	        <ul>
 	            <li class="Selected"><a href="${pageContext.request.contextPath}/">网站首页</a></li>
 	            <li><a href="${pageContext.request.contextPath}/zztcAll?key=588">整装套餐</a></li>
-	            <li><a href="${pageContext.request.contextPath}/mobile/688.jsp">688套餐</a></li>
-	             <li><a href="${pageContext.request.contextPath}/mobile/299.jsp">299套餐</a></li>
+				<li><a href="${pageContext.request.contextPath}/mobile/688.jsp">688套餐</a></li>
+				<li><a href="${pageContext.request.contextPath}/zztcAll?key=588">588套餐</a></li>
+				<li><a href="${pageContext.request.contextPath}/mobile/299.jsp">299套餐</a></li>
 	            <li><a href="${pageContext.request.contextPath}/cases">设计案例</a></li>
 	            <li><a href="${pageContext.request.contextPath}/designer">设计师</a></li>
 	            <li><a href="${pageContext.request.contextPath}/lanzuan">蓝钻工艺</a></li>
@@ -65,7 +67,7 @@
   <!-- 代码 结束 -->
   <!--头部--> 
   <div class="header">
-     <div class="mLogo fl" style="width: 108px"><img src="${MhomeLo.value }"/></div>
+     <div class="mLogo fl" style="width: 108px;"><img src="${MhomeLo.value }"></div>
       <div class="lineSearch fl">
       <ul>
       <li class="thRelative" id="hhDrop00">
@@ -91,14 +93,6 @@
           </dl>
           <div class="clear"></div>
         </div>
-        <!-- 只有唐山才有 -->
-        <c:if test="${currentBCompany == 'tssc' }"> 
-         <div class="head_yy head_tel fl">
-           <span>工商执照</span>
-           <p><a href="${ctx}/businessLicense.jsp"><img src="${ctx }/www/images/national_emblem_light.png"/></a></p>
-         </div>
-         </c:if>
-
       </li>
      </ul>
      </div>
@@ -161,25 +155,38 @@
     
     
     <!--装修风格 start-->
-    <div class="mFeng">
-       <div class="mTitle">
-         <h3>装修风格</h3>
-        
-       </div>
-        
-        <div class="mFeng_con clearfix">
-          <ul class="clearfix" id="clearStyle">
-            <li><a href="${pageContext.request.contextPath}/cases?CaseStyle=现代简约">现代简约</a></li>
-            <li><a href="${pageContext.request.contextPath}/cases?CaseStyle=混搭风格">混搭风格</a></li>
-            <li><a href="${pageContext.request.contextPath}/cases?CaseStyle=中式风格">中式风格</a></li>
-             <li><a href="${pageContext.request.contextPath}/cases?CaseStyle=美式乡村">美式乡村</a></li>
-            <li><a href="${pageContext.request.contextPath}/cases?CaseStyle=地中海">地中海</a></li>
-            <li><a href="${pageContext.request.contextPath}/cases?CaseStyle=北欧风格">北欧风格</a></li>
-           
-            <li><a href="${pageContext.request.contextPath}/cases">其他</a></li>
-          </ul>
-        </div>          
-    </div>
+    <c:choose>
+    	<c:when test="${currentBCompany == 'tysc'}">
+	    <div style="background-color: #ff0b0b;text-align: center;">
+	    	<a href="https://static.meiqia.com/dist/standalone.html?_=t&eid=94308"><img width="100%" alt="" src="${ctx }/mobile/images/home/01.jpg"/></a>
+	    	<a href="http://m.sc27800.com/mActicityDetail?newsId=0f82fae6f0ef11e78f0a5f816d9dc91c"><img width="48%" alt="" src="${ctx }/mobile/images/home/03.jpg"/></a>
+	    	<a href="http://m.sc27800.com/mActicityDetail?newsId=af4e0957f0ee11e78f0a5f816d9dc91c"><img width="48%"alt="" src="${ctx }/mobile/images/home/04.jpg"/></a>
+	    	<a href="http://m.sc27800.com/mActicityDetail?newsId=992bb8d0f0ee11e78f0a5f816d9dc91c"><img width="48%" alt="" src="${ctx }/mobile/images/home/05.jpg"/></a>
+	    	<a href="http://m.sc27800.com/mActicityDetail?newsId=4667f2c7f0ef11e78f0a5f816d9dc91c"><img width="48%" alt="" src="${ctx }/mobile/images/home/06.jpg"/></a>
+	    	<a href="http://m.sc27800.com/mActicityDetail?newsId=fd30088af0ee11e78f0a5f816d9dc91c"><img width="48%" alt="" src="${ctx }/mobile/images/home/07.jpg"/></a>
+	    	<a href="http://m.sc27800.com/mActicityDetail?newsId=e349290bf03411e78f0a5f816d9dc91c"><img width="48%" alt="" src="${ctx }/mobile/images/home/08.jpg"/></a>
+	    </div>
+    </c:when>
+    <c:otherwise>
+			<div class="mFeng">
+		       <div class="mTitle">
+		         <h3>装修风格</h3>
+		       </div>
+		        <div class="mFeng_con clearfix">
+		          <ul class="clearfix" id="clearStyle">
+		            <li><a href="${pageContext.request.contextPath}/cases?CaseStyle=现代简约">现代简约</a></li>
+		            <li><a href="${pageContext.request.contextPath}/cases?CaseStyle=混搭风格">混搭风格</a></li>
+		            <li><a href="${pageContext.request.contextPath}/cases?CaseStyle=中式风格">中式风格</a></li>
+		             <li><a href="${pageContext.request.contextPath}/cases?CaseStyle=美式乡村">美式乡村</a></li>
+		            <li><a href="${pageContext.request.contextPath}/cases?CaseStyle=地中海">地中海</a></li>
+		            <li><a href="${pageContext.request.contextPath}/cases?CaseStyle=北欧风格">北欧风格</a></li>
+		           
+		            <li><a href="${pageContext.request.contextPath}/cases">其他</a></li>
+		          </ul>
+		        </div>          
+		    </div>    	    
+    </c:otherwise>
+    </c:choose>
    <!--装修风格 end--> 
     
     <div class="mPeo">
@@ -427,8 +434,7 @@ setContentTab('two',1,3);
          <h3>联系我们</h3>
          <span>联系地址${MhomeAdress.value }</span><br>
          <span>联系电话：${MhomeTp.value }</span>
-         <!-- 只有唐山才有 -->
-         <c:if test="${branchCompany == 'tssc'} ">
+		 <c:if test="${currentBCompany == 'tssc'}">
          <p>
 		 <a href="${ctx}/mobile/businessLicense.jsp"><img
 		    src="${ctx }/mobile/images/national_emblem_light.png" style="margin-top:4px"/></a>
