@@ -122,6 +122,17 @@
         <a href="${ctx }/Mspec"><img src="${ctx }/mobile/images/mNav_04.png"><span>热门活动</span></a>
       </div>
 
+	  <div>
+	  <a href="${pageContext.request.contextPath}/mobile/299.jsp">
+		 <img src="${ctx}/mobile/images/home/299.jpg" style="width:100%"/>
+	   </a>  
+	   <a href="${pageContext.request.contextPath}/zztcAll?key=588">
+		 <img src="${ctx}/mobile/images/home/588.jpg" style="width:100%"/>
+	   </a> 
+	   <a href="${pageContext.request.contextPath}/mobile/688.jsp">
+		 <img src="${ctx}/mobile/images/home/688.jpg" style="width:100%"/>
+	   </a> 
+	  </div>
     <!--案例案例 start-->
        <div class="mCase">
          <div class="mTitle">

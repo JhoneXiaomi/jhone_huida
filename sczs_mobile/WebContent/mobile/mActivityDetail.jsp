@@ -31,6 +31,5 @@
 			<div class="mCont_news_con">${news.content }</div>
 		</div>
 	</div>
-	${sessionScope.statistics.value }
 </body>
 </html>

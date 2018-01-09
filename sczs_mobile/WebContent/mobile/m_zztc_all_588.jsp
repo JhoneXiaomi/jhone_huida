@@ -59,14 +59,11 @@
       </div>
       <div class="mList_position fr">您的当前位置：<a href="${ctx }/">首页</a> > <a href="javascript:void(0)">装修案例</a></div>
 <div class="xtcmain">
-<div class="xtcmain_img">
-      <img class="po" src="${ctx}/mobile/images/zztcAll/sc588_01.jpg">
-      <div class="inputbm"><a href=""><input style="padding-bottom:10px" class="mfzx" type="submit" value="免费咨询报价"/></a></div>
-  </div>
   
   <div class="xtcmain_img0">
   
   <!-- <div class="inputcen01"><a href="http://pht.zoosnet.net/LR/Chatpre.aspx?id=PHT90969211&lng=cn" target="_blank"><input class="" type="submit" value="点击咨询报价"/></a></div> -->
+  <a href="https://static.meiqia.com/dist/standalone.html?_=t&eid=94308">
    <img src="${ctx}/mobile/images/sczs/588/sc_588_01.jpg"/>
    <img src="${ctx}/mobile/images/sczs/588/sc_588_02.jpg"/>
    <img src="${ctx}/mobile/images/sczs/588/sc_588_03.jpg"/>
@@ -78,77 +75,7 @@
    <img src="${ctx}/mobile/images/sczs/588/sc_588_09.jpg"/>
    <img src="${ctx}/mobile/images/sczs/588/sc_588_10.jpg"/>
    <img src="${ctx}/mobile/images/sczs/588/sc_588_11.jpg"/>
-  <%-- 
-    <img src="${ctx}/mobile/images/zztcAll/sc588_02.jpg">
-    
-     <div class="inputcenc"><a href="http://pht.zoosnet.net/LR/Chatpre.aspx?id=PHT90969211&lng=cn" target="_blank"><input class="" type="submit" value="点击咨询588全包套餐"/></a></div>
-    
-    <img src="${ctx}/mobile/images/zztcAll/sc588_04.jpg">
-    <img src="${ctx}/mobile/images/zztcAll/sc588_07.jpg">
-      
-      <div class="inputcen"><a href="http://pht.zoosnet.net/LR/Chatpre.aspx?id=PHT90969211&lng=cn" target="_blank"><input class="" type="submit" value="点击咨询可服务城市"/></a></div>
-    
-    <img src="${ctx}/mobile/images/zztcAll/sc588_08.jpg">
-    <img src="${ctx}/mobile/images/zztcAll/sc588_09top.jpg">
-    <!--<img src="${ctx}/mobile/images/zztcAll/sc588_09.jpg">-->
-    
-     <div class="inputcend"><a href="http://pht.zoosnet.net/LR/Chatpre.aspx?id=PHT90969211&lng=cn" target="_blank"><input class="" type="submit" value="点击咨询装修报价"/></a></div>
-    
-    <img src="${ctx}/mobile/images/zztcAll/sc588_11.jpg">
-    <img src="${ctx}/mobile/images/zztcAll/sc588_13.jpg">
-    
-     <div class="inputcen"><a href="http://pht.zoosnet.net/LR/Chatpre.aspx?id=PHT90969211&lng=cn" target="_blank"><input class="" type="submit" value="点击咨询全包服务"/></a></div>
-    
-    <img src="${ctx}/mobile/images/zztcAll/sc588_15.jpg">
-    <img src="${ctx}/mobile/images/zztcAll/sc588_17.jpg">
-    <img src="${ctx}/mobile/images/zztcAll/sc588_18.jpg">
-    <img src="${ctx}/mobile/images/zztcAll/sc588_19.jpg">
-    <img src="${ctx}/mobile/images/zztcAll/sc588_20.jpg">
-    <img src="${ctx}/mobile/images/zztcAll/sc588_21.jpg">
-    <img src="${ctx}/mobile/images/zztcAll/sc588_22.jpg">
-    <img src="${ctx}/mobile/images/zztcAll/sc588_23.jpg">
-    <img src="${ctx}/mobile/images/zztcAll/sc588_27.jpg">
-    <img src="${ctx}/mobile/images/zztcAll/sc588_28.jpg">
-    <img src="${ctx}/mobile/images/zztcAll/sc588_30.jpg">
-    
-     <div class="inputcen"><a href="http://pht.zoosnet.net/LR/Chatpre.aspx?id=PHT90969211&lng=cn" target="_blank"><input class="" type="submit" value="点击咨询空间配置"/></a></div>
-    
-    <img src="${ctx}/mobile/images/zztcAll/sc588_31.jpg">
-    
-    <div class="inputcen02"><a href="http://pht.zoosnet.net/LR/Chatpre.aspx?id=PHT90969211&lng=cn" target="_blank"><input class="" type="submit" value="详情咨询客服"/></a></div>
-    
-    <img src="${ctx}/mobile/images/zztcAll/sc588_32.jpg">
-    <img src="${ctx}/mobile/images/zztcAll/sc588_35.jpg">
-    <img src="${ctx}/mobile/images/zztcAll/sc588_36.jpg">
-    <img src="${ctx}/mobile/images/zztcAll/sc588_37.jpg">
-    <img src="${ctx}/mobile/images/zztcAll/sc588_39.jpg">
-    <img src="${ctx}/mobile/images/zztcAll/sc588_40.jpg">
-    
-     <div class="inputcen"><a href="http://pht.zoosnet.net/LR/Chatpre.aspx?id=PHT90969211&lng=cn" target="_blank"><input class="" type="submit" value="点击咨询三创主材"/></a></div>
-    
-    <img src="${ctx}/mobile/images/zztcAll/sc588_42.jpg">
-    
-    <div class="inputcene"><a href="http://pht.zoosnet.net/LR/Chatpre.aspx?id=PHT90969211&lng=cn" target="_blank"><input class="" type="submit" value="点击咨询三创辅材"/></a></div>
-    
-    <img src="${ctx}/mobile/images/zztcAll/sc588_45.jpg">
-    <img src="${ctx}/mobile/images/zztcAll/sc588_46.jpg">
-    
-    <div class="inputcen"><a href="http://pht.zoosnet.net/LR/Chatpre.aspx?id=PHT90969211&lng=cn" target="_blank"><input class="" type="submit" value="点击咨询三创保障"/></a></div>
-    
-    <img src="${ctx}/mobile/images/zztcAll/sc588_48.jpg">
-    <img src="${ctx}/mobile/images/zztcAll/sc588_49.jpg">
-    <img src="${ctx}/mobile/images/zztcAll/sc588_50.jpg">
-    <!--<img src="${ctx}/mobile/images/zztcAll/sc588_51.jpg">-->
-    
-    <div class="inputcenf"><a href="http://pht.zoosnet.net/LR/Chatpre.aspx?id=PHT90969211&lng=cn" target="_blank"><input class="" type="submit" value="点击预约设计师"/></a></div>
-    
-    <img src="${ctx}/mobile/images/zztcAll/sc588_53.jpg">
-    <img src="${ctx}/mobile/images/zztcAll/sc588_55.jpg">
-    <img src="${ctx}/mobile/images/zztcAll/sc588_56.jpg">
-    <img src="${ctx}/mobile/images/zztcAll/sc588_57.jpg">
-    
-    <div class="inputcen_bacr"><a href="http://m.sc27800.com/about" target="_blank"><input class="" type="submit" value="点击了解三创装饰公司"/></a></div> --%>
-    
+ </a>
   </div>
   
 </div><script src="${ctx }/mobile/js/responsiveslides.min.js"></script>
@@ -157,13 +84,20 @@
 
 <!--底部导航 start-->
 <jsp:include page = "public/fotter.jsp"/>
-<!--底部导航  end-->
-<script language="javascript">
-	var LiveAutoInvite0='您好，来自%IP%的朋友';
-	var LiveAutoInvite1='来自首页的对话';
-	var LiveAutoInvite2=' 网站商务通 主要功能：<br>1、主动邀请<br>2、即时沟通<br>3、查看即时访问动态<br>4、访问轨迹跟踪<br>5、内部对话<br>6、不安装任何插件也实现双向文件传输<br><br><b>如果您有任何问题请接受此邀请以开始即时沟通</b>';
-	</script>
-	<script language="javascript" src="http://pht.zoosnet.net/JS/LsJS.aspx?siteid=PHT90969211&float=1&lng=cn"></script>
 
+<script type='text/javascript'>
+    (function(m, ei, q, i, a, j, s) {
+        m[i] = m[i] || function() {
+            (m[i].a = m[i].a || []).push(arguments)
+        };
+        j = ei.createElement(q),
+            s = ei.getElementsByTagName(q)[0];
+        j.async = true;
+        j.charset = 'UTF-8';
+        j.src = 'https://static.meiqia.com/dist/meiqia.js?_=t';
+        s.parentNode.insertBefore(j, s);
+    })(window, document, 'script', '_MEIQIA');
+    _MEIQIA('entId', 94308);
+</script>
 </body>
 </html>
