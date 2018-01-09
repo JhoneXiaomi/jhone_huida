@@ -152,3 +152,18 @@
 12月 09, 2017 12:04:04.86 [32812:38196:1209/120404.869:ERROR:socket_stream.cc(210)] Closing stream with result -100
 12月 09, 2017 12:06:15.00 [32812:38196:1209/120615.000:ERROR:socket_stream.cc(210)] Closing stream with result -100
 12月 09, 2017 12:08:15.10 [32812:38196:1209/120815.108:ERROR:socket_stream.cc(210)] Closing stream with result -100
+
+1月 09, 2018 18:58:28.94 NEW SESSION
+1月 09, 2018 18:58:28.94 [18784:6676:0109/185828.935:ERROR:checkin_request.cc(211)] Failed to get checkin response. Fetcher failed. Retrying.
+1月 09, 2018 18:59:17.56 [18784:6676:0109/185917.569:ERROR:checkin_request.cc(211)] Failed to get checkin response. Fetcher failed. Retrying.
+1月 09, 2018 19:00:06.51 [18784:6676:0109/190006.518:ERROR:process_metrics.cc(105)] NOT IMPLEMENTED
+1月 09, 2018 19:00:06.52 [18784:6676:0109/190006.518:ERROR:process_metrics.cc(105)] NOT IMPLEMENTED
+1月 09, 2018 19:00:06.53 [18784:6676:0109/190006.518:ERROR:process_metrics.cc(105)] NOT IMPLEMENTED
+1月 09, 2018 19:00:06.54 [18784:6676:0109/190006.518:ERROR:process_metrics.cc(105)] NOT IMPLEMENTED
+1月 09, 2018 19:00:19.73 [18784:6676:0109/190019.733:ERROR:checkin_request.cc(211)] Failed to get checkin response. Fetcher failed. Retrying.
+1月 09, 2018 19:00:42.09 [18784:14600:0109/190042.096:ERROR:account_tracker.cc(278)] OnGetTokenFailure: Connection failed (-118).
+1月 09, 2018 19:00:42.12 [18784:14600:0109/190042.097:ERROR:account_tracker.cc(278)] OnGetTokenFailure: Connection failed (-118).
+1月 09, 2018 19:02:06.52 [18784:6676:0109/190206.520:ERROR:process_metrics.cc(105)] NOT IMPLEMENTED
+1月 09, 2018 19:02:06.53 [18784:6676:0109/190206.520:ERROR:process_metrics.cc(105)] NOT IMPLEMENTED
+1月 09, 2018 19:02:06.55 [18784:6676:0109/190206.520:ERROR:process_metrics.cc(105)] NOT IMPLEMENTED
+1月 09, 2018 19:02:23.69 [18784:6676:0109/190223.693:ERROR:checkin_request.cc(211)] Failed to get checkin response. Fetcher failed. Retrying.

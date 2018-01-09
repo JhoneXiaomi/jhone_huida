@@ -1,7 +1,2 @@
 INDEX VERSION 1.4+D:\java_workspace\jhone_huida\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-2397656272.index
-1738056274.index
-3359390352.index
-2323867589.index
-4036161170.index
-1690425767.index
+13278790.index
